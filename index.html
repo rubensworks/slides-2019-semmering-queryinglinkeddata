@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head prefix="foaf: http://xmlns.com/foaf/0.1/">
+    <title>Querying Linked Data on the Web, for real this time</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="node_modules/shower-material/styles/styles.css">
+    <link rel="stylesheet" href="styles/rt-custom.css" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
+    
+    <link rel="foaf:maker" href="https://www.rubensworks.net/#me" />
+
+    <style>
+      .shower {
+        --slide-ratio: calc(16 / 9);
+      }
+    </style>
+  </head>
+
+  <body class="shower list" prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# foaf: http://xmlns.com/foaf/0.1/ owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# org: http://www.w3.org/ns/org# schema: http://schema.org/ cite: http://purl.org/spar/cito/" typeof="schema:PresentationDigitalDocument">
+    <header class="caption">
+      <div class="title">
+        <h1 property="schema:name">Querying Linked Data on the Web,<br />for real this time</h1>
+      </div>
+      <div class="captiondata">
+        <p class="author" rel="schema:author"><a href="https://www.rubensworks.net/#me">Ruben Taelman</a></p>
+        <p class="venue">
+          <a href="https://www.sporthotel-semmering.at/">Sporthotel Semmering 2019</a>, <span rel="schema:datePublished">23 September 2019</span></a>
+        </p>
+      </div>
+    </header>
+
+    <section id="title" class="slide title" inlist="" rel="schema:hasPart" resource="#title">
+      <h2 property="schema:name" style="font-size: 2.3em">Querying Linked Data on the Web, for real this time</h2>
+      <ul class="author inline">
+          <li class="current"><a href="https://www.rubensworks.net/">Ruben Taelman</a></li>
+      </ul>
+      <p class="affiliation"><a href="http://idlab.technology/">Ghent University – imec – IDLab, Belgium</a></p>
+    </section>
+    
+    <section id="start" class="slide center" inlist="" rel="schema:hasPart" resource="#start">
+        <h2 property="schema:name" class="big" style="margin-top: 40px; text-shadow: 2px 2px white; text-align:left"><strong>The Linked (Open) Data Cloud</strong></h2>
+        <img src="img/lod-cloud.svg" alt="lod-cloud" width="250px" />
+        <h3 class="next">SPARQL endpoints are not the way forward to query it</h3>
+    </section>
+    
+    <section id="problems" class="slide" inlist="" rel="schema:hasPart" resource="#problems">
+        <h2 property="schema:name">Problems</h2>
+        <ul>
+            <li>
+                <h3>Privacy issues</h3>
+                <p class="indent">Not all data is public (e.g. Solid), GDPR, ...</p>
+            </li>
+            <li>
+                <h3>SPARQL endpoints don't scale for <em>many clients</em></h3>
+                <p class="indent">Public SPARQL endpoints down for 1.5+ days each month (95% availability).</p>
+            </li>
+            <li>
+                <h3>SPARQL endpoints don't scale for <em>many sources</em></h3>
+                <p class="indent">Federation algorithms only work in the order of 10 sources.</p>
+            </li>
+            <li>
+                <h3>We have <em>many small</em> sources</h3>
+                <p class="indent">Websites use schema.org (36% in 2014), Solid data pods are popping up, ...</p>
+            </li>
+        </ul>
+    </section>
+    
+    <section id="solutions" class="slide" inlist="" rel="schema:hasPart" resource="#solutions">
+        <h2 property="schema:name">(Possible) Solutions</h2>
+        <ul>
+            <li>
+                <h3>Bring querying to the client</h3>
+                <p class="indent">Client-side engines authenticate themselves to sources.</p>
+                <p class="indent">Better scaling, as clients do most of the work themselves.</p>
+            </li>
+            <li>
+                <h3>Link-traversal based querying</h3>
+                <p class="indent">Detect query-relevant sources on-the-fly by incorporating live crawling into the querying process.</p>
+            </li>
+            <li>
+                <h3>Use third-party aggregators to optimize often combined sources</h3>
+                <p class="indent">These could be personal/shared SPARQL/TPF endpoints.</p>
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+      <p class="license">
+            &#169; <span property="schema:copyrightYear">2019</span> <a href="https://www.rubensworks.net" rel="schema:copyrightHolder"><span resource="https://www.rubensworks.net/#me">Ruben Taelman</span></a>
+            — <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" property="schema:license">Creative Commons Attribution 4.0</a>, unless otherwise indicated.
+      </p>
+      <a href="https://github.com/rubensworks/slides-2019-semmering-queryinglinkeddata">Source</a>
+    </footer>
+
+    <script src="node_modules/shower-core/shower.min.js"></script>
+  </body>
+</html>
